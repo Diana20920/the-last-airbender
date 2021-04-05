@@ -25,5 +25,5 @@ RSpec.describe 'Search TLA API by Nation' do
   end
 end
 
-# - The list of allies or "None"
-# - The list of enemies or "None"
+# - The list of allies or "None" -> will address this in refactoring
+# - The list of enemies or "None" -> will address this in refactoring
