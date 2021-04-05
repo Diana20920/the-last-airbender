@@ -1,1 +1,16 @@
 <h1>Characters by Nation Affiliation</h1>
+<p>Total number of people who live in the Fire Nation: <%= @members.count %></p><br>
+
+<h2>Deatails for first 25 members:</h2>
+
+<div class="first-25-info">
+  <ol>
+    <% @members.take(25).each do |member| %>
+      <li><%= image_tag "#{member[:photoUrl]}" %><br>
+          Name: <%= member[:name] %><br>
+          List of Allies: <%= member[:allies] %><br>
+          List of Enemies <%= member[:enemies] %><br>
+          Affiliations: <%= member[:affiliation] %></li><br>
+    <% end %>
+  </ol>
+</div>
