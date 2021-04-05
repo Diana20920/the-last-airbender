@@ -9,7 +9,7 @@ RSpec.describe 'Search TLA API by Nation' do
       click_button 'Search For Members'
 
       expect(current_path).to eq(search_path)
-      expect(page).to have_content("Total number of people who live in the Fire Nation: #{@members.count}")
+      expect(page).to have_content("Total number of people who live in the Fire Nation:")
     end
 
     it 'displays list with detailed information for the first 25 members' do
@@ -18,14 +18,12 @@ RSpec.describe 'Search TLA API by Nation' do
       select 'Fire Nation', from: 'nation'
       click_button 'Search For Members'
 
-      expect(page).to have_content("Deatails for first 25 members:")
+      expect(page).to have_content("Details for first 25 members:")
+      expect(page).to have_content("Name: Chan (Fire Nation admiral)")
+      expect(page).to have_content("Affiliations: Fire Nation Navy")
     end
   end
 end
 
-
-# And for each of the members I should see:
-# - The name of the member (and their photo, if they have one)
 # - The list of allies or "None"
 # - The list of enemies or "None"
-# - Any affiliations that the member has
